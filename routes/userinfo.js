@@ -6,7 +6,7 @@ const userInfo = async(req, res) => {
     const reqUser = await User.findOne({ _id: id})
 
     if(!reqUser){   
-        res.status(404).json({
+        res.status(200).json({
             error: true,
             message: "User not found"
         })
