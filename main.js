@@ -16,7 +16,7 @@ app.use(express.json());
 
 app.post("/register", sign);
 app.get("/login", login);
-app.post("/userinfo", userInfo);
+app.get("/userinfo", userInfo);
 app.post("/message", message)
 
 app.listen(port, (error) => {
