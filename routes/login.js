@@ -5,7 +5,7 @@ const login = async (req, res) => {
   const { email, password } = req.body;
 
   if (!email || !password) {
-    return res.status(401).json({
+    return res.json({
       error: true,
       message: "Email or Password missing",
     });
@@ -15,14 +15,14 @@ const login = async (req, res) => {
   }).exec();
 
   if (!existing) {
-    return res.status(401).json({
+    return res.json({
       error: true,
       message: "Invalid email or password",
     });
   }
   const match = await compare(password, existing.password);
   if (!match) {
-    return res.status(401).json({
+    return res.json({
       error: true,
       message: "Invalid email or password",
     });
