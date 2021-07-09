@@ -6,6 +6,7 @@ import userInfo from "./routes/userinfo.js";
 import message from "./routes/message.js";
 
 const app = express();
+var port = process.env.PORT || 8080;
 
 connectDB();
 
@@ -18,7 +19,7 @@ app.get("/login", login);
 app.post("/userinfo", userInfo);
 app.post("/message", message)
 
-app.listen(3000, (error) => {
+app.listen(port, (error) => {
   if (error == null) {
     console.log("Legion");
   }
