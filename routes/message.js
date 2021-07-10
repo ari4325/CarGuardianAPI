@@ -2,6 +2,10 @@ import Message from "../schema/MessageSchema.js";
 
 const message = async (req, res) => {
     const {recipient_id, msg, msg_type, image} = req.body;
+    console.log(recipient_id);
+    console.log(msg);
+    console.log(msg_type);
+    console.log(image);
     
     if (!recipient_id || !msg || !msg_type){
         return res.status(404).json({
