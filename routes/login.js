@@ -2,7 +2,8 @@ import User from "../schema/UserSchema.js";
 import { compare } from "bcrypt";
 
 const login = async (req, res) => {
-  const { email, password } = req.body;
+  const email = req.query.email;
+  const password = req.query.password;
   console.log(email);
   console.log(password);
 
