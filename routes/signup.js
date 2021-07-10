@@ -38,8 +38,7 @@ const sign = async (req, res) => {
 
   if (created) {
 
-    const user = await User.findOne({email_id: email});
-    const qr = await generateQR((user._id).toString());
+    const qr = await generateQR((created._id).toString());
 
     await User.findOneAndUpdate(
       {email_id:email},
