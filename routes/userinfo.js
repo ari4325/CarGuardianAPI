@@ -1,7 +1,7 @@
 import User from "../schema/UserSchema.js";
 
 const userInfo = async(req, res) => {
-    const {id} = req.body;
+    const id = req.query.id;
     console.log(id)
     const reqUser = await User.findOne({ _id: id})
 
