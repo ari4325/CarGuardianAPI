@@ -2,7 +2,7 @@ import Message from "../schema/MessageSchema.js";
 
 var arr = [];
 
-const sendmessage = async(req, res) => {
+const loadMessage = async(req, res) => {
    var cursor = Message.find({recipient_id: req.query.id});
 
   cursor.each(function(err, item) {
@@ -21,3 +21,5 @@ const sendmessage = async(req, res) => {
     });
   
 }
+
+export default loadMessage;
